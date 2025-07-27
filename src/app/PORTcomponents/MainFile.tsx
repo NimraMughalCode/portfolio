@@ -1,4 +1,4 @@
-import Header from "./Header";
+import AnimatedSection from "../Components/AnimatedSection";
 import Hero from "./Hero";
 import MyProjects from "./MyProjects";
 import AboutMe from "./AboutMe";
@@ -8,13 +8,10 @@ import Integrations from "./Integrations";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
 import ContactDetails from "./ContactDetails";
-import Footer from "./Footer";
-import AnimatedSection from "../Components/AnimatedSection";
 
 const MainFile = () => {
     return (
         <>
-            <Header />
             <main>
                 <AnimatedSection direction="up"><Hero /></AnimatedSection>
                 <AnimatedSection direction="left" delay={0.1}><MyProjects /></AnimatedSection>
@@ -26,7 +23,6 @@ const MainFile = () => {
                 <AnimatedSection direction="left" delay={0.7}><Contact /></AnimatedSection>
                 <AnimatedSection direction="right" delay={0.8}><ContactDetails /></AnimatedSection>
             </main>
-            <Footer />
         </>
     )
 }

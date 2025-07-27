@@ -2,7 +2,13 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-export default function AnimatedSection({ children, direction = "up", delay = 0 }) {
+type AnimatedSectionProps = {
+  children: React.ReactNode;
+  direction?: "up" | "down" | "left" | "right";
+  delay?: number;
+};
+
+export default function AnimatedSection({ children, direction = "up", delay = 0 }: AnimatedSectionProps) {
   const ref = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -12,8 +18,17 @@ export default function AnimatedSection({ children, direction = "up", delay = 0 
   }, [inView]);
 
   const variants = {
-    hidden: { opacity: 0, y: direction === "up" ? 40 : direction === "down" ? -40 : 0, x: direction === "left" ? 40 : direction === "right" ? -40 : 0 },
-    visible: { opacity: 1, y: 0, x: 0, transition: { staggerChildren: 0.15, delay } },
+    hidden: {
+      opacity: 0,
+      y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+      x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: { staggerChildren: 0.15, delay },
+    },
   };
 
   return (
@@ -27,4 +42,4 @@ export default function AnimatedSection({ children, direction = "up", delay = 0 
       {children}
     </motion.section>
   );
-} 
+}

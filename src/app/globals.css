@@ -15,7 +15,21 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-cardbg text-textmain;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-primary font-bold;
+}
+
+.card {
+  @apply bg-cardbg border border-border rounded-lg shadow-sm p-6;
+}
+
+.btn-primary {
+  @apply bg-secondary text-white hover:bg-cta transition-colors font-semibold py-2 px-4 rounded;
+}
+
+.text-soft {
+  @apply text-textsoft;
 }

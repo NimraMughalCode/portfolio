@@ -66,7 +66,7 @@ const Projects = () => {
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 text-center mb-10">Experience &amp; Projects</h2>
 
         <div className="relative border-l-4 border-primary/40 pl-8 space-y-10">
-          {experiences.map((exp, idx) => (
+          {experiences.map((exp) => (
          
           <Link key={exp.id} href={`/experience/${exp.id}`} className="block group transition-all duration-300">
          <div key={exp.title} className="relative group transition-all duration-300">

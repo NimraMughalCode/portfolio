@@ -11,7 +11,7 @@ export default function AnimatedSection({ children, direction = "up", delay = 0 
     if (inView) setHasAnimated(true);
   }, [inView]);
 
-  let variants = {
+  const variants = {
     hidden: { opacity: 0, y: direction === "up" ? 40 : direction === "down" ? -40 : 0, x: direction === "left" ? 40 : direction === "right" ? -40 : 0 },
     visible: { opacity: 1, y: 0, x: 0, transition: { staggerChildren: 0.15, delay } },
   };

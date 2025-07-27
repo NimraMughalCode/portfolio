@@ -108,7 +108,7 @@ export default function Header() {
 // ✅ Type-safe version works in both JS and TS
 type NavItemProps = {
   href: string;
-  pathname: string;
+  pathname: string | null;
   children: React.ReactNode;
   setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 };

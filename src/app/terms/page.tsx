@@ -44,7 +44,7 @@ const TermsPage = () => {
             >
               <h2 className="text-2xl font-bold text-dark-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-dark-600 mb-6">
-                By accessing and using TechFlow's website and services, you accept and agree to be bound 
+                By accessing and using TechFlow&apos;s website and services, you accept and agree to be bound 
                 by the terms and provision of this agreement. If you do not agree to abide by the above, 
                 please do not use this service.
               </p>
@@ -148,7 +148,7 @@ const TermsPage = () => {
             >
               <h2 className="text-2xl font-bold text-dark-900 mb-4">7. Limitation of Liability</h2>
               <p className="text-dark-600 mb-6">
-                TechFlow's liability is limited as follows:
+                TechFlow&apos;s liability is limited as follows:
               </p>
               <ul className="text-dark-600 mb-6 space-y-2">
                 <li>• Our liability is limited to the amount paid for the specific service</li>

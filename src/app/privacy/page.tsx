@@ -163,7 +163,7 @@ const PrivacyPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <h2 className="text-2xl font-bold text-dark-900 mb-4">8. Children's Privacy</h2>
+              <h2 className="text-2xl font-bold text-dark-900 mb-4">8. Children&apos;s Privacy</h2>
               <p className="text-dark-600 mb-6">
                 Our services are not intended for children under the age of 13. We do not 
                 knowingly collect personal information from children under 13. If you believe 
@@ -179,7 +179,7 @@ const PrivacyPage = () => {
               <h2 className="text-2xl font-bold text-dark-900 mb-4">9. Changes to This Policy</h2>
               <p className="text-dark-600 mb-6">
                 We may update this Privacy Policy from time to time. We will notify you of any 
-                changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
               </p>
             </motion.div>
 

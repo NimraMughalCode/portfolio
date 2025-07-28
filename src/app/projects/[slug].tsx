@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type ProjectType = {
   title: string;
@@ -14,7 +15,7 @@ const projectData: Record<string, ProjectType> = {
     title: 'Custom CRM Platform',
     description: 'A scalable CRM built for a real estate client using Bubble.io. Includes automation, dashboards, and integrations.',
     tools: ['Bubble.io', 'Zapier'],
-    details: 'This project involved building a custom CRM tailored to the client’s workflow, automating lead management, and integrating third-party services for seamless operations.',
+    details: 'This project involved building a custom CRM tailored to the client&apos;s workflow, automating lead management, and integrating third-party services for seamless operations.',
     visual: '/globe.svg',
   },
   'mobile-app': {
@@ -55,7 +56,13 @@ const ProjectDetail = () => {
         <Link href="/" className="text-primary underline mb-6 inline-block">&larr; Back to Portfolio</Link>
         <div className="bg-white/80 rounded-xl shadow-lg p-8 border border-border">
           <div className="flex flex-col md:flex-row gap-8 items-center mb-6">
-            <img src={project.visual} alt={project.title} className="w-32 h-32 rounded-lg shadow-md mb-4 md:mb-0" />
+            <Image 
+              src={project.visual} 
+              alt={project.title} 
+              width={128}
+              height={128}
+              className="w-32 h-32 rounded-lg shadow-md mb-4 md:mb-0" 
+            />
             <div>
               <h1 className="text-3xl font-semibold text-textmain mb-2 italic">{project.title}</h1>
               <p className="text-textmain mb-2">{project.description}</p>

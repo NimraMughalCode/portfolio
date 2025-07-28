@@ -3,22 +3,31 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
-import Image from 'next/image';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
-  { href: '#', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#my-projects', label: 'My Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us' },
+  { 
+    href: '#services', 
+    label: 'Services',
+    dropdown: [
+      { href: '#web-development', label: 'Web Development' },
+      { href: '#mobile-apps', label: 'Mobile Apps' },
+      { href: '#no-code', label: 'No-Code Solutions' },
+      { href: '#consulting', label: 'Consulting' },
+    ]
+  },
+  { href: '#projects', label: 'Projects' },
+  { href: '#technologies', label: 'Technologies' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -31,50 +40,86 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed h-[75px] w-full top-0 z-50 transition-all duration-300 ${
+      className={`fixed h-20 w-full top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-medium'
-          : 'bg-white/80 backdrop-blur-sm'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100'
+          : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container-custom px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link
-          href="#"
+          href="/"
           className="flex items-center hover:scale-105 transition-transform duration-300"
         >
-          <Image
-            src="/image.jpg"
-            alt="Nimra Asif Logo"
-            width={48}
-            height={48}
-            className="h-10 w-10 rounded-full object-cover border-2 border-primary"
-          />
-          <span className="ml-3 text-xl font-semibold text-secondary">
-            Nimra Asif
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-xl">T</span>
+          </div>
+          <span className="ml-3 text-xl font-bold text-dark-900">
+            TechFlow
           </span>
         </Link>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 rounded-lg hover:bg-primary/10 transition-colors duration-200"
+          className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
           aria-label="Toggle menu"
         >
           {isOpen ? (
-            <X size={28} className="text-textmain" />
+            <X size={24} className="text-dark-700" />
           ) : (
-            <Menu size={28} className="text-textmain" />
+            <Menu size={24} className="text-dark-700" />
           )}
         </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8 ml-auto">
           {navLinks.map((link) => (
-            <NavItem key={link.href} href={link.href} pathname={pathname}>
-              {link.label}
-            </NavItem>
+            <div key={link.href} className="relative">
+              {link.dropdown ? (
+                <div
+                  className="flex items-center gap-1 cursor-pointer group"
+                  onMouseEnter={() => setActiveDropdown(link.href)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <span className="px-4 py-2 font-medium text-dark-700 hover:text-primary transition-colors">
+                    {link.label}
+                  </span>
+                  <ChevronDown size={16} className="text-dark-500 group-hover:text-primary transition-colors" />
+                  
+                  <AnimatePresence>
+                    {activeDropdown === link.href && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-100 py-2"
+                      >
+                        {link.dropdown.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block px-4 py-2 text-dark-700 hover:text-primary hover:bg-gray-50 transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <NavItem key={link.href} href={link.href} pathname={pathname}>
+                  {link.label}
+                </NavItem>
+              )}
+            </div>
           ))}
+          <Link href="/contact" className="btn-primary">
+            Get Started
+          </Link>
         </nav>
 
         {/* Mobile Navigation */}
@@ -85,18 +130,44 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.25 }}
-              className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-medium lg:hidden flex flex-col items-center gap-2 py-4"
+              className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 lg:hidden"
             >
-              {navLinks.map((link) => (
-                <NavItem
-                  key={link.href}
-                  href={link.href}
-                  pathname={pathname}
-                  setIsOpen={setIsOpen}
-                >
-                  {link.label}
-                </NavItem>
-              ))}
+              <div className="px-6 py-4 space-y-4">
+                {navLinks.map((link) => (
+                  <div key={link.href}>
+                    {link.dropdown ? (
+                      <div>
+                        <div className="font-medium text-dark-700 mb-2">{link.label}</div>
+                        <div className="ml-4 space-y-2">
+                          {link.dropdown.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setIsOpen(false)}
+                              className="block text-dark-600 hover:text-primary transition-colors"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <NavItem
+                        href={link.href}
+                        pathname={pathname}
+                        setIsOpen={setIsOpen}
+                      >
+                        {link.label}
+                      </NavItem>
+                    )}
+                  </div>
+                ))}
+                <div className="pt-4">
+                  <Link href="/contact" className="btn-primary w-full text-center block" onClick={() => setIsOpen(false)}>
+                    Get Started
+                  </Link>
+                </div>
+              </div>
             </motion.nav>
           )}
         </AnimatePresence>
@@ -105,7 +176,6 @@ export default function Header() {
   );
 }
 
-// ✅ Type-safe version works in both JS and TS
 type NavItemProps = {
   href: string;
   pathname: string | null;
@@ -121,13 +191,13 @@ function NavItem({ href, pathname, children, setIsOpen }: NavItemProps) {
       href={href}
       onClick={() => setIsOpen && setIsOpen(false)}
       className={`relative px-4 py-2 font-medium transition-all duration-300 group ${
-        isActive ? 'text-secondary font-semibold' : 'text-textmain hover:text-primary'
+        isActive ? 'text-primary font-semibold' : 'text-dark-700 hover:text-primary'
       }`}
     >
       <span className="relative z-10">{children}</span>
       <motion.span
         layoutId="nav-underline"
-        className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-cta rounded-full transition-all duration-300 ${
+        className={`absolute left-0 bottom-0 h-0.5 bg-primary rounded-full transition-all duration-300 ${
           isActive ? 'w-full' : 'w-0 group-hover:w-full'
         }`}
       />

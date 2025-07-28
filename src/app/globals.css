@@ -4,32 +4,80 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2937;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a;
+    --foreground: #f8fafc;
   }
 }
 
 body {
-  @apply bg-cardbg text-textmain;
+  @apply bg-cardbg text-textmain font-sans;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply text-primary font-bold;
+  @apply text-dark-900 font-bold;
 }
 
 .card {
-  @apply bg-cardbg border border-border rounded-lg shadow-sm p-6;
+  @apply bg-cardbg border border-border rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow duration-300;
 }
 
 .btn-primary {
-  @apply bg-secondary text-white hover:bg-cta transition-colors font-semibold py-2 px-4 rounded;
+  @apply bg-primary text-white hover:bg-primary-700 transition-all duration-300 font-semibold py-3 px-6 rounded-lg shadow-sm hover:shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white hover:bg-secondary-700 transition-all duration-300 font-semibold py-3 px-6 rounded-lg shadow-sm hover:shadow-md;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold py-3 px-6 rounded-lg;
 }
 
 .text-soft {
   @apply text-textsoft;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-primary-50 via-white to-secondary-50;
+}
+
+.section-padding {
+  @apply py-16 px-6;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }

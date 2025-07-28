@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, Calendar } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import Header from '../PORTcomponents/Header';
 import Footer from '../PORTcomponents/Footer';
 
@@ -77,7 +77,7 @@ const ContactPage = () => {
       icon: Clock,
       title: "Response Time",
       details: "Within 24 hours",
-      description: "We'll get back to you quickly",
+      description: "We&apos;ll get back to you quickly",
       action: "#"
     }
   ];
@@ -119,7 +119,7 @@ const ContactPage = () => {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-6xl font-bold text-dark-900 mb-6"
             >
-              Let's Build Something Amazing
+              Let&apos;s Build Something Amazing
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -127,7 +127,7 @@ const ContactPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-dark-600 mb-8 leading-relaxed"
             >
-              Ready to start your project? Get in touch with us and let's discuss how we can 
+              Ready to start your project? Get in touch with us and let&apos;s discuss how we can 
               help bring your ideas to life with our expertise in web development, mobile apps, and no-code solutions.
             </motion.p>
           </div>
@@ -161,7 +161,7 @@ const ContactPage = () => {
                       Thank You!
                     </h4>
                     <p className="text-dark-600">
-                      We've received your message and will get back to you within 24 hours.
+                      We&apos;ve received your message and will get back to you within 24 hours.
                     </p>
                   </motion.div>
                 ) : (
@@ -321,8 +321,8 @@ const ContactPage = () => {
                     Get in Touch
                   </h3>
                   <p className="text-dark-600 leading-relaxed">
-                    Ready to transform your ideas into reality? We're here to help you build 
-                    the next big thing. Let's discuss your project and see how we can bring 
+                    Ready to transform your ideas into reality? We&apos;re here to help you build 
+                    the next big thing. Let&apos;s discuss your project and see how we can bring 
                     your vision to life.
                   </p>
                 </div>
@@ -418,7 +418,7 @@ const ContactPage = () => {
               </h3>
               <p className="text-dark-600">
                 Project timelines vary from 2-4 weeks for simple websites to 8-12 weeks for complex applications. 
-                We'll provide a detailed timeline during our initial consultation.
+                We&apos;ll provide a detailed timeline during our initial consultation.
               </p>
             </motion.div>
 

@@ -1,11 +1,13 @@
 'use client';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 import { experiences } from '@/app/PORTcomponents/Projects';
 import { notFound } from 'next/navigation';
 
 export default function ExperiencePage() {
-  const { id } = useParams();
-  const experience = experiences.find((exp) => exp.id === parseInt(id));
+  const params = useParams();
+  const id = params?.id;
+  const experience = experiences.find((exp) => exp.id === parseInt(id as string));
 
   if (!experience) {
     return notFound(); // fallback 404
@@ -18,9 +20,11 @@ export default function ExperiencePage() {
           <h1 className="text-4xl font-bold text-primary mb-6">{experience.title}</h1>
 
           <div className="overflow-hidden rounded-xl shadow-md mb-8 hover:scale-[1.01] transition-transform">
-            <img
+            <Image
               src={experience.image}
               alt={experience.title}
+              width={800}
+              height={400}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -69,9 +73,11 @@ export default function ExperiencePage() {
               <h2 className="text-2xl font-semibold text-primary mb-4">Mockups</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {experience.mockups.map((mockup, i) => (
-                  <img
+                  <Image
                     key={i}
                     src={mockup}
+                    width={400}
+                    height={300}
                     className="rounded-xl shadow"
                     alt={`Mockup ${i + 1}`}
                   />

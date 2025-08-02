@@ -61,9 +61,9 @@ export const experiences = [
 
 const Projects = () => {
   return (
-    <section id="experience" className="py-20 bg-cardbg">
+    <section id="projects" className="py-20 bg-cardbg">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 text-center mb-10">Experience &amp; Projects</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 text-center mb-10">Projects</h2>
 
         <div className="relative border-l-4 border-primary/40 pl-8 space-y-10">
           {experiences.map((exp) => (

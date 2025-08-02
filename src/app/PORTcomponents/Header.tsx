@@ -2,33 +2,34 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Menu, X /*, ChevronDown */ } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { 
-    href: '#services', 
-    label: 'Services',
-    dropdown: [
-      { href: '#web-development', label: 'Web Development' },
-      { href: '#mobile-apps', label: 'Mobile Apps' },
-      { href: '#no-code', label: 'No-Code Solutions' },
-      { href: '#consulting', label: 'Consulting' },
-    ]
-  },
-  { href: '#projects', label: 'Projects' },
-  { href: '#technologies', label: 'Technologies' },
-  { href: '/contact', label: 'Contact' },
+  // {
+  //   href: '#services',
+  //   label: 'Services',
+  //   dropdown: [
+  //     { href: '#web-development', label: 'Web Development' },
+  //     { href: '#mobile-apps', label: 'Mobile Apps' },
+  //     { href: '#no-code', label: 'No-Code Solutions' },
+  //     { href: '#consulting', label: 'Consulting' },
+  //   ]
+  // },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#technologies', label: 'Technologies' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  // const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,28 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // ✅ Smooth scroll logic
+// ✅ Smooth scroll logic
+const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  if (href.startsWith('/#')) {
+    e.preventDefault();
+    const sectionId = href.split('#')[1];
+    const element = document.getElementById(sectionId);
+
+    if (element && pathname === '/') {
+      // ✅ Already on homepage → scroll directly
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // ✅ Navigate first, then scroll after page loads
+      localStorage.setItem('scrollToSection', sectionId);
+      router.push('/');
+    }
+
+    setIsOpen(false);
+  }
+};
+
 
   return (
     <header
@@ -77,7 +100,8 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-8 ml-auto">
           {navLinks.map((link) => (
             <div key={link.href} className="relative">
-              {link.dropdown ? (
+              {/* Dropdown logic commented out */}
+              {/* {link.dropdown ? (
                 <div
                   className="flex items-center gap-1 cursor-pointer group"
                   onMouseEnter={() => setActiveDropdown(link.href)}
@@ -110,14 +134,14 @@ export default function Header() {
                     )}
                   </AnimatePresence>
                 </div>
-              ) : (
-                <NavItem key={link.href} href={link.href} pathname={pathname}>
+              ) : ( */}
+                <NavItem key={link.href} href={link.href} pathname={pathname} onClick={handleSmoothScroll}>
                   {link.label}
                 </NavItem>
-              )}
+              {/* )} */}
             </div>
           ))}
-          <Link href="/contact" className="btn-primary">
+          <Link href="/#contact" className="btn-primary" onClick={(e) => handleSmoothScroll(e, '/#contact')}>
             Get Started
           </Link>
         </nav>
@@ -135,7 +159,8 @@ export default function Header() {
               <div className="px-6 py-4 space-y-4">
                 {navLinks.map((link) => (
                   <div key={link.href}>
-                    {link.dropdown ? (
+                    {/* Dropdown commented for mobile as well */}
+                    {/* {link.dropdown ? (
                       <div>
                         <div className="font-medium text-dark-700 mb-2">{link.label}</div>
                         <div className="ml-4 space-y-2">
@@ -151,19 +176,20 @@ export default function Header() {
                           ))}
                         </div>
                       </div>
-                    ) : (
+                    ) : ( */}
                       <NavItem
                         href={link.href}
                         pathname={pathname}
+                        onClick={handleSmoothScroll}
                         setIsOpen={setIsOpen}
                       >
                         {link.label}
                       </NavItem>
-                    )}
+                    {/* )} */}
                   </div>
                 ))}
                 <div className="pt-4">
-                  <Link href="/contact" className="btn-primary w-full text-center block" onClick={() => setIsOpen(false)}>
+                  <Link href="/#contact" className="btn-primary w-full text-center block" onClick={(e) => handleSmoothScroll(e, '/#contact')}>
                     Get Started
                   </Link>
                 </div>
@@ -181,15 +207,16 @@ type NavItemProps = {
   pathname: string | null;
   children: React.ReactNode;
   setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  onClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 };
 
-function NavItem({ href, pathname, children, setIsOpen }: NavItemProps) {
+function NavItem({ href, pathname, children, setIsOpen, onClick }: NavItemProps) {
   const isActive = pathname === href;
 
   return (
     <Link
       href={href}
-      onClick={() => setIsOpen && setIsOpen(false)}
+      onClick={(e) => onClick(e, href)}
       className={`relative px-4 py-2 font-medium transition-all duration-300 group ${
         isActive ? 'text-primary font-semibold' : 'text-dark-700 hover:text-primary'
       }`}

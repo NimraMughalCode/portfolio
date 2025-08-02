@@ -56,13 +56,14 @@ const technologies = [
 
 const Technologies = () => {
   return (
-    <section className="section-padding bg-gray-50">
+    <section id='technologies' className="section-padding bg-gray-50">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }} 
             className="text-3xl md:text-4xl font-bold text-dark-900 mb-4"
           >
             Technologies We Master
@@ -71,6 +72,7 @@ const Technologies = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }} 
             className="text-lg text-dark-600 max-w-3xl mx-auto"
           >
             We stay at the forefront of technology to deliver cutting-edge solutions. 
@@ -85,6 +87,7 @@ const Technologies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }} 
               className="group"
             >
               <div className={`${tech.bgColor} rounded-2xl p-6 h-full border border-gray-100 hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
@@ -103,6 +106,7 @@ const Technologies = () => {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: (index * 0.1) + (itemIndex * 0.05) }}
+                      viewport={{ once: true }} 
                       className="group/item"
                     >
                       <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/50 transition-colors">
@@ -129,6 +133,7 @@ const Technologies = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }} 
           className="mt-16"
         >
           <div className="text-center mb-8">
@@ -151,6 +156,7 @@ const Technologies = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true }} 
                 className="bg-white rounded-lg p-4 text-center border border-gray-200 hover:border-primary hover:shadow-md transition-all duration-300"
               >
                 <span className="text-sm font-medium text-dark-700">{tech}</span>

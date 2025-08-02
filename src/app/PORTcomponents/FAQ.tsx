@@ -54,6 +54,7 @@ const FAQ = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }} 
             className="text-3xl md:text-4xl font-bold text-dark-900 mb-4"
           >
             Frequently Asked Questions
@@ -62,6 +63,7 @@ const FAQ = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }} 
             className="text-lg text-dark-600 max-w-3xl mx-auto"
           >
             Get answers to common questions about our services, process, and what makes us different.
@@ -76,6 +78,7 @@ const FAQ = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }} 
                 className="bg-white rounded-xl border border-gray-200 overflow-hidden"
               >
                 <button

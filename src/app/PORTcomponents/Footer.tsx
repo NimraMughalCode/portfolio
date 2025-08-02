@@ -181,7 +181,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">Made with ❤️ by TechFlow</span>
+              <span className="text-gray-400 text-sm">Made by TechFlow</span>
             </div>
           </div>
         </div>

@@ -75,13 +75,14 @@ const Contact = () => {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section id='contact' className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }} 
             className="text-3xl md:text-4xl font-bold text-dark-900 mb-4"
           >
             Let's Build Something Amazing
@@ -90,6 +91,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }} 
             className="text-lg text-dark-600 max-w-3xl mx-auto"
           >
             Ready to start your project? Get in touch with us and let's discuss how we can 
@@ -103,6 +105,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }} 
             className="order-2 lg:order-1"
           >
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
@@ -114,6 +117,7 @@ const Contact = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }} 
                   className="text-center py-8"
                 >
                   <CheckCircle size={64} className="text-secondary mx-auto mb-4" />
@@ -251,6 +255,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }} 
             className="order-1 lg:order-2"
           >
             <div className="space-y-8">
@@ -272,6 +277,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }} 
                     className="flex items-start gap-4"
                   >
                     <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">

@@ -65,10 +65,10 @@ const AboutPage = () => {
 
   return (
     <div>
-      <Header />
+
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <section className="pt-40 pb-16 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="container-custom px-6">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1

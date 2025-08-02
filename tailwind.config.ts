@@ -12,71 +12,71 @@ export default {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: '#E9F8F7', // Slightly darker minty background
+        foreground: '#3A3A4C', // Darker default text
         primary: {
-          DEFAULT: '#2563EB', // Modern Blue
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA',
-          500: '#3B82F6',
-          600: '#2563EB',
-          700: '#1D4ED8',
-          800: '#1E40AF',
-          900: '#1E3A8A',
+          DEFAULT: '#b293ba', // Slightly deeper Lavender Pink
+          50: '#F9F7FA',
+          100: '#F3EDF7',
+          200: '#E8DBEF',
+          300: '#DCC3E1',
+          400: '#D1B6D8',
+          500: '#BC9FC5',
+          600: '#A987B2',
+          700: '#946E9E',
+          800: '#7E5888',
+          900: '#694473',
         },
         secondary: {
-          DEFAULT: '#10B981', // Emerald Green
-          50: '#ECFDF5',
-          100: '#D1FAE5',
-          200: '#A7F3D0',
-          300: '#6EE7B7',
-          400: '#34D399',
-          500: '#10B981',
-          600: '#059669',
-          700: '#047857',
-          800: '#065F46',
-          900: '#064E3B',
+          DEFAULT: '#C98894', // Darker Dusty Rose
+          50: '#FFF6F7',
+          100: '#FEEAEC',
+          200: '#F8D1D6',
+          300: '#F0B2B8',
+          400: '#E39BA2',
+          500: '#C98894',
+          600: '#B4707C',
+          700: '#9A5A66',
+          800: '#814551',
+          900: '#67313C',
         },
         accent: {
-          DEFAULT: '#F59E0B', // Amber
-          50: '#FFFBEB',
-          100: '#FEF3C7',
-          200: '#FDE68A',
-          300: '#FCD34D',
-          400: '#FBBF24',
-          500: '#F59E0B',
-          600: '#D97706',
-          700: '#B45309',
-          800: '#92400E',
-          900: '#78350F',
+          DEFAULT: '#F59E8A', // Darker Soft Coral
+          50: '#FFF6F4',
+          100: '#FFE8E4',
+          200: '#FFD0C7',
+          300: '#FFB9AD',
+          400: '#F59E8A',
+          500: '#E58573',
+          600: '#D46B5C',
+          700: '#C15346',
+          800: '#A63D31',
+          900: '#8C271C',
         },
         dark: {
-          DEFAULT: '#1F2937', // Gray 800
-          50: '#F9FAFB',
-          100: '#F3F4F6',
-          200: '#E5E7EB',
-          300: '#D1D5DB',
-          400: '#9CA3AF',
-          500: '#6B7280',
-          600: '#4B5563',
-          700: '#374151',
-          800: '#1F2937',
-          900: '#111827',
+          DEFAULT: '#3A3A4C', // Darkened text main
+          50: '#F5F5F8',
+          100: '#EAEAEE',
+          200: '#D5D5DC',
+          300: '#B0B0BA',
+          400: '#8B8B99',
+          500: '#67677B',
+          600: '#515164',
+          700: '#3A3A4C',
+          800: '#262634',
+          900: '#12121C',
         },
         textmain: {
-          DEFAULT: '#1F2937', // Dark Gray
+          DEFAULT: '#3A3A4C', // Darker main text
         },
         textsoft: {
-          DEFAULT: '#6B7280', // Medium Gray
+          DEFAULT: '#676F7D', // Darker soft text
         },
         cardbg: {
-          DEFAULT: '#FFFFFF', // White
+          DEFAULT: '#F3EDF7', // Slightly darker Lavender
         },
         border: {
-          DEFAULT: '#E5E7EB', // Light Gray
+          DEFAULT: '#C9D4DA', // Darker border
         },
       },
     },

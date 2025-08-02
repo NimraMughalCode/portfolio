@@ -164,13 +164,13 @@ const Carousel = () => {
 
           {/* Navigation Buttons */}
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="absolute z-50 left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
             onClick={() => paginate(-1)}
           >
             <ChevronLeft size={24} className="text-dark-600" />
           </button>
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="absolute z-50 right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
             onClick={() => paginate(1)}
           >
             <ChevronRight size={24} className="text-dark-600" />

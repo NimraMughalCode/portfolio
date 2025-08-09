@@ -4,40 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-const faqs = [
-  {
-    question: "What services does TechFlow offer?",
-    answer: "We specialize in web development, mobile app development, and no-code solutions. Our services include custom web applications, cross-platform mobile apps, e-commerce platforms, SaaS applications, and consulting services. We work with modern technologies like React, Next.js, React Native, Flutter, Bubble.io, and FlutterFlow."
-  },
-  {
-    question: "How long does it take to complete a project?",
-    answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while a complex web application could take 8-12 weeks. Mobile apps typically take 6-10 weeks. We provide detailed timelines during our initial consultation and keep you updated throughout the development process."
-  },
-  {
-    question: "Do you provide ongoing support and maintenance?",
-    answer: "Yes, we offer comprehensive support and maintenance packages. This includes bug fixes, security updates, performance optimization, feature additions, and 24/7 technical support. We also provide hosting and server management services to ensure your application runs smoothly."
-  },
-  {
-    question: "What is your pricing structure?",
-    answer: "We offer flexible pricing options including fixed-price projects, time and materials, and retainer agreements. Pricing depends on project scope, complexity, and timeline. We provide detailed quotes after understanding your requirements and can work within various budgets."
-  },
-  {
-    question: "Can you work with existing systems and integrate with third-party services?",
-    answer: "Absolutely! We have extensive experience integrating with existing systems, APIs, and third-party services. We can work with your current tech stack, migrate data, and ensure seamless integration with tools like payment gateways, CRMs, marketing platforms, and more."
-  },
-  {
-    question: "What makes TechFlow different from other development agencies?",
-    answer: "We combine technical expertise with business understanding. Our team stays current with the latest technologies, we provide transparent communication throughout the process, and we focus on delivering solutions that drive real business value. We also offer expertise in both traditional development and no-code platforms."
-  },
-  {
-    question: "Do you provide hosting and deployment services?",
-    answer: "Yes, we offer complete hosting and deployment solutions. We can set up hosting on platforms like AWS, Google Cloud, Vercel, or Netlify. We handle SSL certificates, domain configuration, CDN setup, and ongoing server management to ensure optimal performance and security."
-  },
-  {
-    question: "What happens after the project is completed?",
-    answer: "After project completion, we provide comprehensive documentation, training sessions for your team, and ongoing support. We offer maintenance packages and can help with future enhancements. We also provide analytics and performance monitoring to ensure your application continues to meet your business needs."
-  }
-];
+const faqs = [ /* your FAQ array here */ ];
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -46,15 +13,23 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const smoothScroll = (id: string) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="section-padding bg-gray-50">
       <div className="container-custom">
+        {/* Heading */}
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }} 
+            viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-dark-900 mb-4"
           >
             Frequently Asked Questions
@@ -63,13 +38,14 @@ const FAQ = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }} 
+            viewport={{ once: true }}
             className="text-lg text-dark-600 max-w-3xl mx-auto"
           >
             Get answers to common questions about our services, process, and what makes us different.
           </motion.p>
         </div>
 
+        {/* FAQ Items */}
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -78,7 +54,7 @@ const FAQ = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }} 
+                viewport={{ once: true }}
                 className="bg-white rounded-xl border border-gray-200 overflow-hidden"
               >
                 <button
@@ -96,14 +72,14 @@ const FAQ = () => {
                     )}
                   </div>
                 </button>
-                
+
                 <AnimatePresence>
                   {openIndex === index && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
+                      animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-4">
@@ -135,12 +111,18 @@ const FAQ = () => {
               how we can bring your project to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="btn-primary">
+              <button
+                onClick={() => smoothScroll('#contact')}
+                className="btn-primary"
+              >
                 Get in Touch
-              </a>
-              <a href="/about" className="btn-outline">
+              </button>
+              <button
+                onClick={() => smoothScroll('#about')}
+                className="btn-outline"
+              >
                 Learn More About Us
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>
@@ -149,4 +131,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ; 
+export default FAQ;

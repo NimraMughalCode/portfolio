@@ -12,8 +12,8 @@ const Hero = () => {
     const typed = new Typed(typedRef.current, {
       strings: [
         'Web Applications',
-        'Mobile Apps',
-        'No-Code Solutions',
+        'Websites',
+        'Design Solutions',
         'Digital Products'
       ],
       typeSpeed: 50,
@@ -28,12 +28,12 @@ const Hero = () => {
   }, []);
 
   const features = [
-    'Custom Web Development',
-    'Mobile App Development',
-    'No-Code Solutions',
+    'Custom Web Applications',
+    'Low-Code Development',
+    'eCommerce Development',
     'UI/UX Design',
-    'Consulting Services',
-    '24/7 Support'
+    'Brand Identity',
+    'API Integrations'
   ];
 
   return (
@@ -56,41 +56,52 @@ const Hero = () => {
           >
             <div className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-6">
               <CheckCircle size={16} className="mr-2" />
-              Trusted by 100+ Companies
+              Trusted by Startups & Businesses
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-dark-900 mb-6 leading-tight">
-              We Build
+              Build with Confidence.
               <br />
+              Launch with{' '}
               <span className="text-primary">
                 <span ref={typedRef}></span>
               </span>
             </h1>
             
             <p className="text-xl text-dark-600 mb-8 leading-relaxed">
-              Transform your ideas into powerful digital solutions. We specialize in modern web development, 
-              mobile apps, and no-code platforms to help your business thrive in the digital age.
+              Web apps, websites, and design solutions — built to perform, crafted to impress. 
+              Trojanix helps you go from concept to clean execution with speed and clarity.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center justify-center group"
-              >
-                Start Your Project
-                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-outline flex items-center justify-center group"
-              >
-                <Play size={20} className="mr-2" />
-                Watch Demo
-              </motion.button>
-            </div>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+  {/* Email Button */}
+  <motion.a
+    href="mailto:info@trojanic.com" // replace with your email
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="btn-primary flex items-center justify-center group"
+  >
+    Get a Free Quote
+    <ArrowRight
+      size={20}
+      className="ml-2 group-hover:translate-x-1 transition-transform"
+    />
+  </motion.a>
+
+  {/* WhatsApp Button */}
+  <motion.a
+    href="https://wa.me/923206011437" // replace with your WhatsApp number in international format
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="btn-outline flex items-center justify-center group"
+  >
+    <Play size={20} className="mr-2" />
+    Let’s Talk
+  </motion.a>
+</div>
+
 
             {/* Features Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -140,9 +151,9 @@ const Hero = () => {
                 <div className="w-full h-64 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white text-2xl font-bold">T</span>
+                      <span className="text-white text-2xl font-bold">TX</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-dark-900 mb-2">TechFlow Agency</h3>
+                    <h3 className="text-lg font-semibold text-dark-900 mb-2">Trojanix</h3>
                     <p className="text-dark-600 text-sm">Your Digital Partner</p>
                   </div>
                 </div>

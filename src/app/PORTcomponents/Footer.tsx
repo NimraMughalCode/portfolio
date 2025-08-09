@@ -1,11 +1,33 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // ✅ Smooth scroll logic copied from Header
+  const handleSmoothScroll = (e, href) => {
+    if (href.startsWith('/#') || href.startsWith('#')) {
+      e.preventDefault();
+      const sectionId = href.replace('/#', '').replace('#', '');
+      const element = document.getElementById(sectionId);
+
+      if (element && pathname === '/') {
+        // Already on homepage → scroll directly
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Navigate first, then scroll after load
+        localStorage.setItem('scrollToSection', sectionId);
+        router.push('/');
+      }
+    }
+  };
 
   const footerLinks = {
     services: [
@@ -16,7 +38,7 @@ const Footer = () => {
       { name: 'UI/UX Design', href: '#design' }
     ],
     company: [
-      { name: 'About Us', href: '/about' },
+      { name: 'About Us', href: '/#about' },
       { name: 'Our Team', href: '/team' },
       { name: 'Careers', href: '/careers' },
       { name: 'Blog', href: '/blog' },
@@ -28,21 +50,15 @@ const Footer = () => {
       { name: 'Support', href: '/support' },
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' }
-    ],
-    contact: [
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'Get a Quote', href: '/quote' },
-      { name: 'Support', href: '/support' },
-      { name: 'Partnership', href: '/partnership' }
     ]
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/techflow' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/techflow' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/techflow' },
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/techflow' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/techflow' }
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/trojanix' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/trojanix' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/trojanix' },
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/trojanix' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/trojanix' }
   ];
 
   return (
@@ -56,7 +72,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">T</span>
               </div>
-              <span className="ml-3 text-xl font-bold">TechFlow</span>
+              <span className="ml-3 text-xl font-bold">Trojanix</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               We're a team of passionate developers, designers, and strategists dedicated 
@@ -86,8 +102,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
                     className="text-gray-300 hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -103,8 +120,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
                     className="text-gray-300 hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -120,8 +138,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
                     className="text-gray-300 hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -139,21 +158,21 @@ const Footer = () => {
               <Mail size={20} className="text-primary" />
               <div>
                 <p className="text-sm text-gray-400">Email</p>
-                <p className="text-gray-300">hello@techflow.agency</p>
+                <p className="text-gray-300">info@trojanix.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Phone size={20} className="text-primary" />
               <div>
                 <p className="text-sm text-gray-400">Phone</p>
-                <p className="text-gray-300">+1 (555) 123-4567</p>
+                <p className="text-gray-300">+92 320 6011437</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <MapPin size={20} className="text-primary" />
               <div>
                 <p className="text-sm text-gray-400">Address</p>
-                <p className="text-gray-300">123 Tech Street, Digital City, DC 12345</p>
+                <p className="text-gray-300"></p>
               </div>
             </div>
           </div>
@@ -166,7 +185,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               <p className="text-gray-400 text-sm">
-                © {currentYear} TechFlow Agency. All rights reserved.
+                © {currentYear} Trojanix. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
                 <Link href="/privacy" className="text-gray-400 hover:text-primary transition-colors">
@@ -181,7 +200,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">Made by TechFlow</span>
+              <span className="text-gray-400 text-sm">Made by Trojanix</span>
             </div>
           </div>
         </div>
@@ -191,4 +210,3 @@ const Footer = () => {
 };
 
 export default Footer;
-  

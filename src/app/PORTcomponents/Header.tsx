@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About Us' },
+  { href: '/#about', label: 'About Us' },
   // {
   //   href: '#services',
   //   label: 'Services',
@@ -19,7 +19,7 @@ const navLinks = [
   //     { href: '#consulting', label: 'Consulting' },
   //   ]
   // },
-  { href: '/#projects', label: 'Projects' },
+  // { href: '/#projects', label: 'Projects' },
   { href: '/#technologies', label: 'Technologies' },
   { href: '/#contact', label: 'Contact' },
 ];
@@ -79,7 +79,7 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
             <span className="text-white font-bold text-xl">T</span>
           </div>
           <span className="ml-3 text-xl font-bold text-dark-900">
-            TechFlow
+            TROJANIX
           </span>
         </Link>
 

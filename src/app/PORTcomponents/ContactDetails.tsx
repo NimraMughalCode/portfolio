@@ -1,21 +1,21 @@
-import { Mail, Linkedin, PhoneCall, CalendarDays } from 'lucide-react';
+import { Mail, Phone, PhoneCall, CalendarDays } from 'lucide-react';
 
 const ContactDetails = () => {
   const contacts = [
     {
-      icon: <Linkedin size={28} />,
-      label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/nimraasif/',
+      icon: <Phone size={28} />,
+      label: 'Phone',
+      url: 'tel:+923206011437',
     },
     {
       icon: <PhoneCall size={28} />,
       label: 'WhatsApp',
-      url: 'https://wa.me/923000000000',
+      url: 'https://wa.me/923206011437',
     },
     {
       icon: <Mail size={28} />,
       label: 'Email',
-      url: 'mailto:nimra@example.com',
+      url: 'mailto:info@trojanic.com',
     },
     {
       icon: <CalendarDays size={28} />,
@@ -25,7 +25,7 @@ const ContactDetails = () => {
   ];
 
   return (
-    <section id="resume" className="py-20 bg-white/60 backdrop-blur-md">
+    <section id="contact" className="py-20 bg-white/60 backdrop-blur-md">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 mb-10">Contact Links</h2>
 

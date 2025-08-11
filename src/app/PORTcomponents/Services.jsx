@@ -105,7 +105,7 @@ const Services = () => {
             viewport={{ once: true }} 
             className="text-lg text-dark-600 max-w-3xl mx-auto"
           >
-            From idea to launch, we provide end-to-end solutions to help your business grow and thrive.
+            We help startups, businesses, and creators bring their digital ideas to life — from concept to clean execution
           </motion.p>
         </div>
 

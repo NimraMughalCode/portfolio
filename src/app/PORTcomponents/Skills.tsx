@@ -2,16 +2,21 @@
 import { useEffect, useState, useRef } from 'react';
 
 const tools = [
-  { name: 'Bubble.io', color: 'bg-primary' },
-  { name: 'Flutterflow.io', color: 'bg-secondary' },
-  { name: 'Next.js', color: 'bg-cta' },
-  { name: 'Asana', color: 'bg-primary' },
-  { name: 'Jira', color: 'bg-secondary' },
-  { name: 'Trello', color: 'bg-cta' },
-  { name: 'Notion', color: 'bg-primary' },
-  { name: 'Excel', color: 'bg-secondary' },
-  { name: 'ClickUp', color: 'bg-cta' },
+  { name: 'Bubble.io', color: 'bg-primary text-white' },
+  { name: 'Flutterflow.io', color: 'bg-secondary text-white' },
+  { name: 'Next.js', color: 'bg-black text-white' }, // Dark for visibility
+  { name: 'Asana', color: 'bg-primary text-white' },
+  { name: 'Jira', color: 'bg-secondary text-white' },
+  { name: 'Trello', color: 'bg-[#0079BF] text-white' }, // Trello brand blue
+  { name: 'Notion', color: 'bg-primary text-white' },
+  { name: 'Excel', color: 'bg-secondary text-white' },
+  { name: 'ClickUp', color: 'bg-[#7B68EE] text-white' }, // ClickUp purple
+
+    { name: 'Figma', color: 'bg-[#F24E1E] text-white' }, // Figma orange-red
+  { name: 'Firebase', color: 'bg-[#FFCA28] text-black' }, // Firebase yellow
+  { name: 'WordPress', color: 'bg-[#21759B] text-white' }, // WordPress blue
 ];
+
 
 const skills = [
   { name: 'Project Planning', level: 90 },

@@ -6,11 +6,11 @@ import Footer from '../PORTcomponents/Footer';
 
 const TermsPage = () => {
   return (
-    <div>
+    <div> 
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <section className="mt-[80px] pt-20 pb-16 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="container-custom px-6">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
@@ -44,7 +44,7 @@ const TermsPage = () => {
             >
               <h2 className="text-2xl font-bold text-dark-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-dark-600 mb-6">
-                By accessing and using TechFlow&apos;s website and services, you accept and agree to be bound 
+                By accessing and using Trojanix&apos;s website and services, you accept and agree to be bound 
                 by the terms and provision of this agreement. If you do not agree to abide by the above, 
                 please do not use this service.
               </p>
@@ -57,7 +57,7 @@ const TermsPage = () => {
             >
               <h2 className="text-2xl font-bold text-dark-900 mb-4">2. Services Description</h2>
               <p className="text-dark-600 mb-6">
-                TechFlow provides web development, mobile app development, no-code solutions, and 
+                Trojanix provides web development, mobile app development, no-code solutions, and 
                 consulting services. Our services include but are not limited to:
               </p>
               <ul className="text-dark-600 mb-6 space-y-2">
@@ -118,9 +118,9 @@ const TermsPage = () => {
               <ul className="text-dark-600 mb-6 space-y-2">
                 <li>• Client retains ownership of their existing intellectual property</li>
                 <li>• Custom code and designs created for the client become their property upon final payment</li>
-                <li>• TechFlow retains rights to reusable components and frameworks</li>
+                <li>• Trojanix retains rights to reusable components and frameworks</li>
                 <li>• Third-party licenses and assets remain subject to their respective terms</li>
-                <li>• Portfolio rights: TechFlow may showcase completed work in our portfolio</li>
+                <li>• Portfolio rights: Trojanix may showcase completed work in our portfolio</li>
               </ul>
             </motion.div>
 
@@ -148,7 +148,7 @@ const TermsPage = () => {
             >
               <h2 className="text-2xl font-bold text-dark-900 mb-4">7. Limitation of Liability</h2>
               <p className="text-dark-600 mb-6">
-                TechFlow&apos;s liability is limited as follows:
+                Trojanix&apos;s liability is limited as follows:
               </p>
               <ul className="text-dark-600 mb-6 space-y-2">
                 <li>• Our liability is limited to the amount paid for the specific service</li>
@@ -199,7 +199,7 @@ const TermsPage = () => {
             >
               <h2 className="text-2xl font-bold text-dark-900 mb-4">10. Governing Law</h2>
               <p className="text-dark-600 mb-6">
-                These terms are governed by the laws of the jurisdiction where TechFlow is incorporated. 
+                These terms are governed by the laws of the jurisdiction where Trojanix is incorporated. 
                 Any disputes will be resolved through arbitration or mediation before pursuing legal action.
               </p>
             </motion.div>
@@ -228,9 +228,10 @@ const TermsPage = () => {
               </p>
               <div className="bg-gray-50 rounded-lg p-6">
                 <p className="text-dark-600">
-                  <strong>Email:</strong> legal@techflow.agency<br />
-                  <strong>Phone:</strong> +1 (555) 123-4567<br />
-                  <strong>Address:</strong> 123 Tech Street, Digital City, DC 12345
+                 <strong>Email:</strong> info@trojanix.com<br />
+<strong>Phone:</strong> +92 320 6011437<br />
+<strong>Address:</strong> Chenab Rangers, Alrehman Road, Mirza Street, Sialkot Pakistan
+
                 </p>
               </div>
             </motion.div>

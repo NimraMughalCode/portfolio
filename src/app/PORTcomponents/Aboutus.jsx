@@ -10,7 +10,7 @@ const AboutUs = () => {
     { icon: Monitor, text: 'Cross-Platform Compatibility' },
     { icon: Users, text: 'Trusted Talent Network' },
     { icon: Zap, text: 'Flexible Tech Stack' },
-    { icon: CheckCircle, text: 'MVPs to Full Products, On-Time Delivery' },
+    { icon: CheckCircle, text: 'On-Time Delivery' },
   ];
 
   return (

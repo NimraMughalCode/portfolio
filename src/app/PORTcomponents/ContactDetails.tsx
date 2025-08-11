@@ -1,4 +1,4 @@
-import { Mail, Phone, PhoneCall, CalendarDays } from 'lucide-react';
+import { Mail, Phone, MessageCircle, PhoneCall, CalendarDays } from 'lucide-react';
 
 const ContactDetails = () => {
   const contacts = [
@@ -8,7 +8,7 @@ const ContactDetails = () => {
       url: 'tel:+923206011437',
     },
     {
-      icon: <PhoneCall size={28} />,
+      icon: <MessageCircle size={28} />,
       label: 'WhatsApp',
       url: 'https://wa.me/923206011437',
     },
@@ -20,7 +20,7 @@ const ContactDetails = () => {
     {
       icon: <CalendarDays size={28} />,
       label: 'Calendly',
-      url: 'https://calendly.com/nimraasif/15min',
+      url: 'https://calendly.com/trojanix-info/30min',
     },
   ];
 

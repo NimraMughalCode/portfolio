@@ -10,7 +10,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "CEO, TechStart",
     company: "TechStart Inc.",
-    content: "TechFlow transformed our business with their innovative web application. The team delivered beyond our expectations and continues to provide excellent support.",
+    content: "Trojanix transformed our business with their innovative web application. The team delivered beyond our expectations and continues to provide excellent support.",
     rating: 5,
     image: "/next.svg"
   },
@@ -19,7 +19,7 @@ const testimonials = [
     name: "Michael Chen",
     role: "Founder, InnovateLab",
     company: "InnovateLab",
-    content: "Working with TechFlow was a game-changer for our startup. Their expertise in no-code solutions helped us launch our MVP in record time.",
+    content: "Working with Trojanix was a game-changer for our startup. Their expertise in no-code solutions helped us launch our MVP in record time.",
     rating: 5,
     image: "/vercel.svg"
   },
@@ -28,7 +28,7 @@ const testimonials = [
     name: "Emily Rodriguez",
     role: "Marketing Director",
     company: "GrowthCo",
-    content: "The mobile app developed by TechFlow exceeded all our expectations. Their attention to detail and user experience design is outstanding.",
+    content: "The mobile app developed by Trojanix exceeded all our expectations. Their attention to detail and user experience design is outstanding.",
     rating: 5,
     image: "/file.svg"
   },
@@ -37,7 +37,7 @@ const testimonials = [
     name: "David Thompson",
     role: "CTO, DigitalFlow",
     company: "DigitalFlow",
-    content: "TechFlow's consulting services helped us optimize our development process. Their expertise in modern technologies is unmatched.",
+    content: "Trojanix's consulting services helped us optimize our development process. Their expertise in modern technologies is unmatched.",
     rating: 5,
     image: "/globe.svg"
   }
@@ -101,7 +101,7 @@ const Carousel = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-dark-600 max-w-2xl mx-auto"
           >
-            Don't just take our word for it. Here's what our clients have to say about working with TechFlow.
+            Don't just take our word for it. Here's what our clients have to say about working with Trojanix.
           </motion.p>
         </div>
 

@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X /*, ChevronDown */ } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -73,17 +75,20 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
     >
       <div className="container-custom px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center hover:scale-105 transition-transform duration-300"
-        >
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-xl">T</span>
-          </div>
-          <span className="ml-3 text-xl font-bold text-dark-900">
-            TROJANIX
-          </span>
-        </Link>
+   {/* Logo */}
+<Link
+  href="/"
+  className="flex items-center hover:scale-105 transition-transform duration-300"
+>
+  <Image
+    src="TROJANIX.png"
+    alt="Trojanix Logo"
+    width={200} // adjust as needed
+    height={50}
+    priority
+  />
+</Link>
+
 
         {/* Mobile Menu Button */}
         <button

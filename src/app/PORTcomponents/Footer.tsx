@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,10 +43,18 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">T</span>
-              </div>
-              <span className="ml-3 text-xl font-bold">Trojanix</span>
+            <Link
+  href="/"
+  className="flex items-center hover:scale-105 transition-transform duration-300"
+>
+  <Image
+    src="TROJANIX.png"
+    alt="Trojanix Logo"
+    width={160} // adjust as needed
+    height={50}
+    priority
+  />
+</Link>
             </div>
             <p className="text-gray-600 leading-relaxed">
               We're a team of passionate developers, designers, and strategists

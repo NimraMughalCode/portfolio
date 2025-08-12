@@ -1,4 +1,8 @@
-'use client';
+"use client"
+
+
+import { usePathname, useRouter } from 'next/navigation';
+import { useCallback } from 'react';
 
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
@@ -7,6 +11,9 @@ import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 
 const Hero = () => {
   const typedRef = useRef(null);
+  const pathname = usePathname();
+  const router = useRouter();
+
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -30,6 +37,25 @@ const Hero = () => {
     'Brand Identity',
     'API Integrations'
   ];
+
+  const handleSmoothScroll = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, href: string) => {
+      if (href.startsWith('/#')) {
+        e.preventDefault();
+        const sectionId = href.split('#')[1];
+        const element = document.getElementById(sectionId);
+
+        if (element && pathname === '/') {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          localStorage.setItem('scrollToSection', sectionId);
+          router.push('/');
+        }
+      }
+    },
+    [pathname, router]
+  );
+
 
   return (
     <section className="hero p-4 mt-20 relative w-full min-h-screen flex items-center justify-center gradient-bg overflow-hidden">
@@ -78,10 +104,12 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               {/* Email Button */}
               <motion.a
-                href="mailto:info@trojanic.com"
+                // href="/#contact"
+
+                 onClick={(e) => handleSmoothScroll(e, '/#contact')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center justify-center group"
+                className="btn-primary flex items-center justify-center group cursor-pointer"
               >
                 Get a Free Quote
                 <ArrowRight

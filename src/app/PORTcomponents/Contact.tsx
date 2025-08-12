@@ -6,7 +6,7 @@ import SendMessage from './SendMessage';
 
 const ContactSection = () => {
   return (
-    <section id="contact-section" className="relative py-20 overflow-hidden">
+    <section id="contact" className="relative py-20 overflow-hidden">
       {/* Background gradient blobs */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-10 left-10 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>

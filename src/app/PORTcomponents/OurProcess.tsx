@@ -14,7 +14,7 @@ const OurProcess = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-white">
+    <section id="process" className="relative py-20 bg-white">
       <div className="container-custom px-6">
         {/* Heading */}
         <motion.h2

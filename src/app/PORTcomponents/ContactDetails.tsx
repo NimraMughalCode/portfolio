@@ -25,7 +25,7 @@ const ContactDetails = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white/60 backdrop-blur-md">
+    <section  className="py-20 bg-white/60 backdrop-blur-md">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 mb-10">Contact Links</h2>
 

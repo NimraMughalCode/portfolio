@@ -39,7 +39,9 @@ export default function HomePage() {
        <AnimatedSection direction="up" delay={0.1}><Carousel /></AnimatedSection>      
         </div> 
         <AnimatedSection direction="right" delay={0.1}><OurProcess /></AnimatedSection>
-        <AnimatedSection direction="right" delay={0.1}><ContactDetails /></AnimatedSection>
+
+ <AnimatedSection direction="right" delay={0.1}><Contact /></AnimatedSection>
+        {/* <AnimatedSection direction="right" delay={0.1}><ContactDetails /></AnimatedSection> */}
      
       </main>
       <Footer />

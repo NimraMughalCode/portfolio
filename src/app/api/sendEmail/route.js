@@ -17,7 +17,7 @@ export async function POST(req) {
 
     const response = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "progrumar@gmail.com",
+      to: "info@trojanix.com",
       subject: `New Message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });

@@ -80,6 +80,13 @@ const services = [
     icon: Rocket,
     color: "from-purple-500 to-indigo-500",
     bgColor: "bg-purple-50"
+  },
+  {
+    title: "Mobile App Development",
+    description: "Cross-platform mobile applications built with React Native or Flutter — sleek, fast, and user-friendly.",
+    icon: Monitor, // You could use a different icon like Smartphone if added
+    color: "from-green-500 to-teal-500",
+    bgColor: "bg-green-50"
   }
 ];
 

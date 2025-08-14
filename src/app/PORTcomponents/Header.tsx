@@ -148,9 +148,15 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
               {/* )} */}
             </div>
           ))}
-          <Link href="/#contact" className="btn-primary" onClick={(e) => handleSmoothScroll(e, '/#contact')}>
-            Get Started
-          </Link>
+          <a
+  href="https://wa.me/923206011437"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-primary"
+>
+  Get Started
+</a>
+
         </nav>
 
         {/* Mobile Navigation */}
@@ -196,9 +202,14 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
                   </div>
                 ))}
                 <div className="pt-4">
-                  <Link href="/#contact" className="btn-primary w-full text-center block" onClick={(e) => handleSmoothScroll(e, '/#contact')}>
-                    Get Started
-                  </Link>
+                   <a
+    href="https://wa.me/923206011437"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-primary w-full text-center block"
+  >
+    Get Started
+  </a>
                 </div>
               </div>
             </motion.nav>

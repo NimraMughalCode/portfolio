@@ -58,7 +58,7 @@ const Hero = () => {
 
 
   return (
-    <section className="hero p-4 mt-20 relative w-full min-h-screen flex items-center justify-center gradient-bg overflow-hidden">
+    <section className="hero relative w-full min-h-screen flex items-center justify-center gradient-bg overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -73,7 +73,7 @@ const Hero = () => {
         */}
       </div>
 
-      <div className="relative z-10 container-custom px-6 py-16">
+      <div className="relative z-10 container-custom px-10 py-6">
         <div className="grid lg:grid-cols-1 gap-12 items-center">
           {/* Left Content */}
           <motion.div

@@ -35,9 +35,9 @@ export default function HomePage() {
           <AnimatedSection direction="up" delay={0.1} ><Services /></AnimatedSection>
         <AnimatedSection direction="up" delay={0.1}><Skills /></AnimatedSection>
            <AnimatedSection direction="right" delay={0.1}><AboutUs /></AnimatedSection>
-         <div className="bg-white pb-[250px]">
+         
        <AnimatedSection direction="up" delay={0.1}><Carousel /></AnimatedSection>      
-        </div> 
+        
         <AnimatedSection direction="right" delay={0.1}><OurProcess /></AnimatedSection>
 
  <AnimatedSection direction="right" delay={0.1}><Contact /></AnimatedSection>
